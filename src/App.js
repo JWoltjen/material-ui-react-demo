@@ -12,8 +12,10 @@ import { makeStyles, ThemeProvider, createMuiTheme } from '@material-ui/core/sty
 import { orange } from '@material-ui/core/colors';
 import 'fontsource-roboto';
 
-import Topography from '@material-ui/core/Typography'
-import Typography from '@material-ui/core/Typography';
+import Typography from '@material-ui/core/Typography'
+import Container from '@material-ui/core/Container'
+import Paper from '@material-ui/core/Paper'
+import Grid from '@material-ui/core/Grid'
 
 const useStyles = makeStyles({
   root: {
@@ -66,8 +68,10 @@ function CheckboxExample() {
 function App() {
   return (
   <ThemeProvider theme={theme}>
+    <Container maxWidth='md'>
     <div className="App">
       <header className='App-header'>
+
         <Typography variant='h2'>
           Welcome to MUI
         </Typography>
@@ -75,13 +79,19 @@ function App() {
           Learn how to use Material UI
         </Typography>
       <ButtonStyled/>
-      <TextField
-        variant='filled'
-        color='secondary'
-        type='email'
-        label='The Time'
-        placeholder='test@test.com'
-      />
+
+    <Grid container spacing={2} justify="center">
+      <Grid item>
+        <Paper style={{height: 75, width: 50, }}/> 
+      </Grid>
+      <Grid item>
+        <Paper style={{height: 75, width: 50, }}/> 
+      </Grid>
+      <Grid item>
+        <Paper style={{height: 75, width: 50, }}/> 
+      </Grid>
+    </Grid>
+
       <CheckboxExample/>
       <ButtonGroup size='large' variant='contained' color='primary' >
       <Button 
@@ -97,6 +107,7 @@ function App() {
       </ButtonGroup>
       </header>
     </div>
+    </Container>
     </ThemeProvider>
   );
 }
